@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { ContextProvider } from "./context/data";
+import AddCon from "./Components/contact/Addcont";
+import { List } from "./Components/contactList/List";
+import { Routes, Route } from "react-router-dom"
+import Home from "./Components/home/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ paddingLeft: "25%", paddingRight: "25%" }}>
+      
+      <ContextProvider>
+        <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="add" element={<AddCon/>}/>
+        <Route path="contact" element={<List/>}/>
+        </Routes>
+        
+      </ContextProvider>
     </div>
   );
 }

@@ -1,0 +1,54 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.phone {
+  font-size: 14px;
+  font-weight: 200;
+  opacity: 0.4;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #383838;
+  color: white;
+  border-radius: 999px 300px 300px 999px;
+  overflow: hidden;
+  padding-right: 20px;
+  transition: 0.4s;
+}
+
+.container:hover {
+  background: #525252;
+}
+.container:hover .delete {
+  opacity: 1;
+}
+
+.container > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avtar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.delete {
+  background: none;
+  color: #fe6161;
+  border: none;
+  transition: 0.4s;
+  cursor: pointer;
+  opacity: 0;
+}
