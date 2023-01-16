@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useContacts from "../../hooks/UseContacts";
 import styles from "./addcontact.module.css";
 import { Input } from "../input/Input";
-import { MdAddCircle } from "react-icons/md";
 import { CgCloseR } from "react-icons/cg";
 
 function EditCont(props) {
@@ -12,7 +11,7 @@ function EditCont(props) {
   const [whatsapp, setWhatsapp] = useState(props.main.whatsapp);
   const [type, settype] = useState(props.main.type);
 
-  const { editContacts, contacts } = useContacts();
+  const { editContacts} = useContacts();
 
   let id = props.main.id;
 
