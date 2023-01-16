@@ -1,5 +1,5 @@
 .input {
-  width: 100%;
+  width: 70%;
   background: #383838;
   border: 2px solid #383838;
   color: white;
@@ -7,6 +7,9 @@
   border-radius: 999px;
   transition: 0.4s;
   height: 40px;
+}
+.input::placeholder{
+  color:white;
 }
 .input:focus {
   outline: none;

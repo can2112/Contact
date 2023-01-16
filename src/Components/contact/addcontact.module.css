@@ -26,9 +26,20 @@ button {
   border-radius: 999px;
 }
 
+.inContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inContainer > label {
+  color: white;
+}
+
 .form {
   width: 100%;
   display: flex;
+  flex-direction: column;
   gap: 5px;
 }
 
@@ -53,36 +64,46 @@ span {
 
 .selecing {
   background: #383838;
+  width: 70%;
   border: 2px solid #383838;
-   color:white;
+  color: white;
   padding: 0px 30px;
   border-radius: 999px;
   transition: 0.4s;
   height: 40px;
 }
-.selecing::after{
-    color:white
+.selecing::after {
+  color: white;
 }
-.selecing:focus{
+.selecing:focus {
   outline: none;
   border-color: #4b9d5e;
 }
 
-.selecing > select >option{
-   opacity:"0.2";
-   color:"rgb(197, 195, 193);"
+.selecing > select > option {
+  opacity: "0.2";
+  color: "rgb(197, 195, 193);";
 }
-select option::selection{
-    background-color: #383838;
+select option::selection {
+  background-color: #383838;
 }
 
 select option {
-    opacity: 0.3;
-    color:rgb(104, 96, 85) ;
+  opacity: 0.3;
+  color: rgb(104, 96, 85);
 }
 
 select::placeholder {
-    color: gray;
-  }
+  color: gray;
+}
 
-
+.popUp {
+  position: fixed;
+  padding: 5px 12px;
+  top: 26%;
+  left: 62%;
+  width: 500px;
+  background-color: #554444;
+  z-index: 999;
+  border-radius: 12px;
+}

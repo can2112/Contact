@@ -22,6 +22,15 @@ export function ContextProvider({ children }) {
     }
   }
 
+  function editContacts(contactId, newData) {
+    console.log(newData);
+    if (newData) {
+      setSaveContacts(
+        contacts?.map((res) => (contactId === res?.id ? newData : res))
+      );
+    }
+  }
+
   useEffect(() => {
     loadContacts();
   }, []);
@@ -41,9 +50,9 @@ export function ContextProvider({ children }) {
   function onChangeSearch(event) {
     setSearch(event.target.value);
   }
-  contacts.sort((a, b) => a.name.localeCompare(b.name));
+  contacts?.sort((a, b) => a?.name?.localeCompare(b?.name));
   const filteredContacts = contacts.filter((item) => {
-    return item.name.toLowerCase().includes(search.toLowerCase());
+    return item?.name?.toLowerCase().includes(search?.toLowerCase());
   });
 
   return (
@@ -55,6 +64,7 @@ export function ContextProvider({ children }) {
         addContacts,
         onChangeSearch,
         deletecontacts,
+        editContacts,
       }}
     >
       {children}
