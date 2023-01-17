@@ -11,7 +11,7 @@ function EditCont(props) {
   const [whatsapp, setWhatsapp] = useState(props.main.whatsapp);
   const [type, settype] = useState(props.main.type);
 
-  const { editContacts} = useContacts();
+  const { editContacts } = useContacts();
 
   let id = props.main.id;
 
@@ -21,7 +21,7 @@ function EditCont(props) {
     event.preventDefault();
 
     editContacts(id, editedData);
-    props.close(false)
+    props.close(false);
   }
 
   function onChangeAvatar(event) {
@@ -53,82 +53,81 @@ function EditCont(props) {
           justifyContent: "space-between",
         }}
         onClick={() => props.close(false)}
-      ><div></div>
-        <h2 style={{alignSelf:"center"}}>Edit Contact</h2>
+      >
+        <div></div>
+        <h2 style={{ alignSelf: "center" }}>Edit Contact</h2>
         <CgCloseR size={25} />
       </div>
       <section
         className={styles.container}
         style={{ paddingTop: "50px", paddingBottom: "20px" }}
       >
+        <form onSubmit={onSubmit} className={styles.form}>
+          <div className={styles.inContainer}>
+            <label name="photo" htmlFor="photo">
+              Photo:
+            </label>
+            <Input
+              placeholder="url of photo"
+              onChange={onChangeAvatar}
+              value={avatar}
+              name="photo"
+            />
+          </div>
+          <div className={styles.inContainer}>
+            <label htmlFor="name">Name:</label>
+            <Input
+              placeholder="name *"
+              required
+              onChange={onChangeName}
+              value={name}
+              name="name"
+            />
+          </div>
+          <div className={styles.inContainer}>
+            <label htmlFor="number">Number:</label>
+            <Input
+              placeholder="number *"
+              required
+              onChange={onChangePhone}
+              value={phone}
+              name="number"
+            />
+          </div>
 
-            <form onSubmit={onSubmit}  className={styles.form}>
-              <div className={styles.inContainer}>
-                <label name="photo" htmlFor="photo">
-                  Photo:
-                </label>
-                <Input
-                  placeholder="url of photo"
-                  onChange={onChangeAvatar}
-                  value={avatar}
-                  name="photo"
-                />
-              </div>
-              <div className={styles.inContainer}>
-                <label htmlFor="name">Name:</label>
-                <Input
-                  placeholder="name *"
-                  required
-                  onChange={onChangeName}
-                  value={name}
-                  name="name"
-                />
-              </div>
-              <div className={styles.inContainer}>
-                <label htmlFor="number">Number:</label>
-                <Input
-                  placeholder="number *"
-                  required
-                  onChange={onChangePhone}
-                  value={phone}
-                  name="number"
-                />
-              </div>
+          <div className={`${(styles.select, styles.inContainer)}`}>
+            <label>Type:</label>
+            <select
+              className={styles.selecing}
+              value={type}
+              onChange={onSelectType}
+            >
+              <option value="" disabled>
+                Type
+              </option>
+              <option>Personal</option>
+              <option>Office</option>
+            </select>
+          </div>
+          <div className={`${(styles.select, styles.inContainer)}`}>
+            <label>Whatsapp:</label>
+            <select
+              className={styles.selecing}
+              value={whatsapp}
+              onChange={onSelectWhat}
+            >
+              <option value="" disabled>
+                whatsapp
+              </option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
 
-              <div className={`${(styles.select, styles.inContainer)}`}>
-                <label>Type:</label>
-                <select
-                  className={styles.selecing}
-                  value={type}
-                  onChange={onSelectType}
-                >
-                  <option value="" disabled>
-                    Type
-                  </option>
-                  <option>Personal</option>
-                  <option>Office</option>
-                </select>
-              </div>
-              <div className={`${(styles.select, styles.inContainer)}`}>
-                <label>Whatsapp:</label>
-                <select
-                  className={styles.selecing}
-                  value={whatsapp}
-                  onChange={onSelectWhat}
-                >
-                  <option value="" disabled>
-                    whatsapp
-                  </option>
-                  <option>Yes</option>
-                  <option>No</option>
-                </select>
-              </div>
-
-              <button className={styles.circle} style={{marginTop:"10px"}}>
-                <h3>Save Changes</h3>
-              </button>
-            </form>
-        
+          <button className={styles.circle} style={{ marginTop: "10px" }}>
+            <h3>Save Changes</h3>
+          </button>
+        </form>
       </section>
     </div>
   );

@@ -1,0 +1,15 @@
+.container{
+    position :fixed;
+    left:0;
+    top:0;
+    background-color:black;
+    height:100%;
+    width:150px;
+}
+
+.navigation{
+    display: flex;
+    justify-content: center;
+    margin-top:20px ;
+    cursor: pointer;
+}
